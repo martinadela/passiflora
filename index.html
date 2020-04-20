@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PASSIFLORA</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Lexend+Mega|Pinyon+Script|Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            color: rgb(229, 245, 3);
+            text-align: center;
+            font-size: 130px;
+            text-transform: uppercase;
+            word-break: break-all;
+        }
+        
+        .smaller-font {
+            font-size: 50%;
+        }
+        
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        #cover {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+        .special-text {
+            color: rgb(77, 6, 243);
+            font-size: 70px;
+            font-family:'Pinyon Script', cursive;
+            text-align: center;
+        }
+        
+        
+        .poem { 
+            color: rgb(229, 245, 3);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 60px;
+            text-align:center;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            
+        }
+        #pics1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            justify-items: center;
+        }
+        
+        #pics1 img {
+            width: 100%;
+        }
+
+        #garden {
+            font-size: 100px;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            text-align: center;
+        }
+
+        #hands {
+            font-size: 20px;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        #wrist {
+            font-size: 20px;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+        
+        #smell { 
+            margin-bottom: 4em;
+            margin-top: 2em;
+            font-family:'Press Start 2P', cursive;
+            color: rgb(238, 90, 181);
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #favorite {
+            color: rgb(241, 9, 9);
+            margin-bottom: 1em;
+        }
+
+        #description {
+            color: mediumblue;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+        
+        #thepast {
+            width: 100%;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        #bad {
+            color: rgb(19, 231, 54);
+            margin-bottom: 2em;
+            margin-bottom: 2em;
+        }
+        #extrasolar {
+            color: rgb(240, 12, 12);
+            font-size: 80px;
+            text-align: center;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        
+        
+        #black {
+            color: black;
+        }
+        
+        #sunstroke {
+            text-align:center ;
+            background: rgb(2,0,36);
+            background: linear-gradient(60deg, rgba(231, 136, 189, 0.5) 0%, rgba(9,9,121,0.5) 35%, rgba(0,212,255,1) 100%);
+            
+        }
+        
+        .twocolumn {
+            display: flex;
+            
+        }
+        
+        .twocolumn > * {
+            width: 50%;
+        }
+        
+        
+        #paris {
+            width: 100%;
+            
+        }
+        
+        #paris2 {
+            width: 100%;
+        }
+        
+        #firebox {
+            position: relative;
+            
+        }
+        
+        #pita {
+            position: absolute;
+            top: 35%;
+            right: 30%;
+            width: 20%;
+        }
+
+        #pailon {
+            position: absolute;
+            bottom: 20%;
+            left: 36%;
+            width: 20%;
+        }
+
+        #sanrafael {
+            position: absolute;
+            bottom: 30%;
+            right: 2%;
+            width: 20%;
+        }
+        
+        #america {
+            position: absolute;
+            bottom: 6%;
+            left: 0%;
+            width: 20%;
+            filter: contrast(30);
+        }
+        
+        #fuego {
+            width: 100%;
+            margin-top: 1em;
+        }
+        
+        #expanded {
+            width: 100%;
+            margin-bottom: 2em;
+        }
+        
+        #arrarray {
+            margin-top: 2em;
+            margin-bottom: 2em;
+            width: 100%;
+        }
+        
+        #virginbox {
+            position: relative;
+        }
+        
+        #virgin-gif-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            filter: opacity(75%);
+        }
+        
+        #virgin-gif {
+            height: 50%;
+        }
+
+        #time {
+            color: rgb(243, 247, 6);
+        }
+
+        #shores {
+            color: rgb(243, 241, 240);
+            font-size:20px;
+            text-align:left;
+            left: 2%;
+        }
+
+        #horizon {
+            width: 95%;
+            filter: saturate(4);
+            transform: rotate(20deg);
+        }
+
+        #horizon2 {
+            width: 95%;
+            filter: saturate(4);
+            transform: rotate(140deg); 
+        }
+
+        #hole {
+            color: rgb(250, 244, 244);
+            margin-bottom: 2em;
+            margin-top: 4em;
+            text-align:right;
+            font-size: 100px;
+        }
+
+        #dreambox {
+            position: relative;
+           
+        }
+
+        #dreambig {
+            width: 70%;
+           align-self: center;
+
+        }
+
+        #latino {
+            position: relative;
+            width: 50%;
+            top: 20%;
+            right: 10%;
+        }
+    </style>
+</head>
+<body>
+    <img id="background" src="bloom.gif"></img>
+    <audio src="content/somevideo.mp4"></audio>
+    
+    <div id="cover"> 
+        <h1>
+            <div>
+                PASSI
+            </div>
+            
+            <div>
+                FLORA
+            </div>
+            
+            
+        </h1>
+        <p class="special-text">The Garden of Transcontinental Desires</p>
+        
+    </div>
+    <div id="pics1">
+        <img id="mapa1" src="mapa aereo1.gif"></img>
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+        
+        <img id="bloom2" src="bloom2.gif"></img>
+        <img id="bloom3" src="bloom3.gif"></img>
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+        <img id="mapa1" src="mapa3.gif"></img>
+    </div>
+    
+    
+    <p id="garden" class="special-text">
+        Welcome to my garden. 
+    </p>
+
+    <p class="poem" id="hands">
+        
+        -LOOK AT YOUR HANDS-
+        
+        
+    </p>
+
+    <p class="poem" id="wrist">
+        
+     Now smell your right wrist
+        
+        
+    </p>
+
+    <p class="poem" id="smell">
+        Can you smell it?
+    </p>
+
+    <p id="favorite" class="special-text">
+       That is the smell of my favorite flower.
+
+    </p>
+
+    <p class="poem" id="description">
+        leathery, musky, peachy, ambrosial
+    </p>
+
+    <p class="poem" id="hands">
+        
+      ON THE OTHER HAND...
+        
+        
+    </p>
+    
+    <img id="thepast" src="past.gif"></img>
+
+    <p class="poem" id="smell">
+        Can you smell it?
+    </p>
+          
+          
+      </p>
+    
+    <img id="paris" src="paris.gif"></img>
+    
+    <p class="poem" id="aroma">
+        
+        Once the aroma of a flower starts spreading
+        
+        
+    </p>
+    
+    <img id="paris2" src="paris2.gif"></img>
+    
+    
+    <p class="poem" id="stop">
+        
+        It will not stop
+        
+        
+    </p>
+    
+    <img id="expanded" src="expanded.gif"></img>
+    
+    <div id="firebox">
+        <img id="fuego" src="fuego.JPG"></img>
+        <video id="pita" src="pita.mp4" controls="true"></video>
+        <img id="america" src="america.jpg"></img>
+        <video id="pailon" src="pailon.mp4" controls="true"></video>
+        <video id="sanrafael" src="sanrafael.mp4" controls="true"></video>
+    </div>
+    
+    <div id="virginbox">
+        <img id="arrarray" src="arrarray.png"></img>
+        <img id="arrarray" src="arrarray.png"></img>
+        <img id="arrarray" src="arrarray.png"></img>
+        <img id="arrarray" src="arrarray.png"></img>
+        <div id="virgin-gif-box">
+            <img id="virgin-gif" src="VIRGEN.gif"></img>  
+        </div>
+    </div>
+
+
+   <img id="horizon" src="horizon.gif"></img>
+
+   <p class="poem" id="shores">
+        
+    BETWEEN TWO SHORES
+    
+</p>
+   <img id="horizon2" src="horizon.gif"></img>
+
+   
+
+    <p class="poem" id="hole">
+        
+        a black hole.
+        
+    </p> 
+    
+    <div class="twocolumn">
+        <img id="planet" src="planet.gif"></img>
+        
+        <p class="special-text" id="sunstroke">
+            A sunstroke.
+            A desert. A city. 
+            An unmbral of salt.
+            Follow the water path. 
+            It is an ocean. 
+            You don't need to swim.
+            The tallest mountains grow benath you.
+            As you reach the coast, the moon lights the sand. 
+            Bend down and smell the floor.
+            
+            
+        </p>
+    </div>
+    
+    <p class="poem" id="time">
+        Time is golden. No. Silence is golden. No.
+        You smell like copper.
+        
+    </p>
+
+    <p class="poem" id="extrasolar">
+        
+        An extrasolar world.
+        
+        
+    </p>
+    
+
+    <div id="dreambox" class="twocolumn">
+
+    <img id="latino" src="latino.JPG"></img>
+    <img id="dreambig" src="dreambig.gif"></img>
+
+</div>
+    
+   
+
+    
+</body>
+
+</html>
