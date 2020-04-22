@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PASSIFLORA</title>
-
+    
     <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Lexend+Mega|Pinyon+Script|Press+Start+2P&display=swap" rel="stylesheet">
     
     <style>
+
+        body {
+            cursor: url('flowerb.png'), auto;    
+        }
         * {
             margin: 0;
             padding: 0;
@@ -22,6 +26,9 @@
             font-size: 130px;
             text-transform: uppercase;
             word-break: break-all;
+            margin-top: 1em;
+            transition-property: color;
+            transition-duration: 2s;
         }
         
         .smaller-font {
@@ -47,7 +54,7 @@
         
         .special-text {
             color: rgb(77, 6, 243);
-            font-size: 70px;
+            font-size: 100px;
             font-family:'Pinyon Script', cursive;
             text-align: center;
         }
@@ -73,21 +80,24 @@
         
         #pics1 img {
             width: 100%;
+            filter: saturate(20%);
+            transition-property: filter;
+            transition-duration: 1s;
         }
-
+        
         #garden {
             font-size: 100px;
             margin-bottom: 1em;
             margin-top: 1em;
             text-align: center;
         }
-
+        
         #hands {
             font-size: 20px;
             margin-top: 2em;
             margin-bottom: 2em;
         }
-
+        
         #wrist {
             font-size: 20px;
             margin-top: 2em;
@@ -103,11 +113,17 @@
             font-size: 20px;
         }
 
+        .sniff {
+            transition-property: color;
+            transition-duration: 2s;
+        }   
+        
+        
         #favorite {
             color: rgb(241, 9, 9);
             margin-bottom: 1em;
         }
-
+        
         #description {
             color: mediumblue;
             margin-top: 2em;
@@ -118,15 +134,38 @@
             width: 100%;
             margin-top: 2em;
             margin-bottom: 2em;
+            opacity: 60%;
+        }
+        
+        #opiumbox {
+            position: relative;
+            
+        }
+        
+        #floripondio {
+            width: 100%;
+            filter: contrast(120%);
         }
 
-        #bad {
-            color: rgb(19, 231, 54);
-            margin-bottom: 2em;
-            margin-bottom: 2em;
+        #snow {
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            width: 50%;
+
+        #aroma {
+            transition-property: color;
+            transition-duration: 2s;
+        }
+            
+
+        #stop {
+            transition-property: color;
+            transition-duration: 2s;
+        }
         }
         #extrasolar {
-            color: rgb(240, 12, 12);
+            color: rgb(243, 93, 218);
             font-size: 80px;
             text-align: center;
             margin-top: 1em;
@@ -151,6 +190,7 @@
         }
         
         .twocolumn > * {
+            display: block;
             width: 50%;
         }
         
@@ -175,14 +215,14 @@
             right: 30%;
             width: 20%;
         }
-
+        
         #pailon {
             position: absolute;
             bottom: 20%;
             left: 36%;
             width: 20%;
         }
-
+        
         #sanrafael {
             position: absolute;
             bottom: 30%;
@@ -234,61 +274,131 @@
         #virgin-gif {
             height: 50%;
         }
-
+        
         #time {
             color: rgb(243, 247, 6);
         }
-
+        
         #shores {
             color: rgb(243, 241, 240);
             font-size:20px;
             text-align:left;
             left: 2%;
         }
-
+        
         #horizon {
             width: 95%;
             filter: saturate(4);
             transform: rotate(20deg);
         }
-
+        
         #horizon2 {
             width: 95%;
             filter: saturate(4);
             transform: rotate(140deg); 
         }
-
+        
         #hole {
             color: rgb(250, 244, 244);
             margin-bottom: 2em;
             margin-top: 4em;
             text-align:right;
             font-size: 100px;
+            transition-property: color;
+            transition-duration: 2s;
         }
-
+        
         #dreambox {
             position: relative;
-           
+            
         }
-
+        
         #dreambig {
-            width: 70%;
-           align-self: center;
-
+            align-self: center;
+            
+        }
+        
+        
+        #parisc {
+            width: 100%;
         }
 
-        #latino {
-            position: relative;
-            width: 50%;
-            top: 20%;
-            right: 10%;
+        #vaportina {
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            z-index: 10;
+        }
+
+        #vaportina #pause {
+            display: none;
+        }
+        
+
+        #play {
+            color: mediumvioletred;
+            font-family: cursive ;
+            font-size: 20px;
+            background-color: skyblue;
+        }
+
+        #pause {
+            color: mediumvioletred;
+            font-family: cursive ;
+            font-size: 20px;
+            background-color: skyblue;
+        }
+
+        #vaportina .button {
+            cursor: url('flowerb.png'), auto;
+            user-select: none;    
+        }
+
+        #venus {
+            color: rgb(241, 150, 211);
+            font-size: 50px;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        #sky {
+            filter: contrast(120%);
         }
     </style>
 </head>
 <body>
     <img id="background" src="bloom.gif"></img>
-    <audio src="content/somevideo.mp4"></audio>
     
+    <div id="vaportina">
+        <audio loop="true">
+            <source src="vienes-y-te-vas-edited.mp3" type="audio/mpeg">
+            <source src="vienes-y-te-vas-edited.ogg" type="audio/ogg">
+        </audio>
+        <div id="play" class="button">
+            PLAY ME
+        </div>
+        <div id="pause" class="button">
+            PAUSE ME
+        </div>
+    </div>
+
+    <script>
+        const playContainer = document.querySelector('#vaportina')
+        const audioElement = playContainer.querySelector('audio')
+        const playButton = playContainer.querySelector('#play')
+        const pauseButton = playContainer.querySelector('#pause')
+        playButton.onclick = function() {
+            audioElement.play()
+            playButton.style.display = 'none'
+            pauseButton.style.display = 'block'
+        }
+        pauseButton.onclick = function() {
+            audioElement.pause()
+            playButton.style.display = 'block'
+            pauseButton.style.display = 'none'
+        }
+    </script>
+
     <div id="cover"> 
         <h1>
             <div>
@@ -304,6 +414,17 @@
         <p class="special-text">The Garden of Transcontinental Desires</p>
         
     </div>
+
+    <script>
+        document.querySelectorAll('#cover h1').forEach(function(element) {
+            const transparentClick = function() {
+                element.style.color = 'rgba(0,230,64,1)'
+            }
+            element.onmouseover = transparentClick
+            element.ontouchstart = transparentClick
+        })
+    </script>
+
     <div id="pics1">
         <img id="mapa1" src="mapa aereo1.gif"></img>
         <div>
@@ -324,153 +445,324 @@
         <img id="mapa1" src="mapa3.gif"></img>
     </div>
     
+    <script>
+        document.querySelectorAll('#pics1 img').forEach(function(element) {
+            const transparentClick = function() {
+                element.style.filter = 'saturate(100%)'
+            }
+            element.onmouseover = transparentClick
+            element.ontouchstart = transparentClick
+        })
+    </script>
     
     <p id="garden" class="special-text">
         Welcome to my garden. 
     </p>
-
+    
     <p class="poem" id="hands">
         
         -LOOK AT YOUR HANDS-
         
         
     </p>
-
+    
     <p class="poem" id="wrist">
         
-     Now smell your right wrist
+        Now smell your right wrist
+        
+        
+    </p>
+    
+    <p class="poem sniff">
+        
+       sniff, 
         
         
     </p>
 
+    <p class="poem sniff">
+        
+        sniff, 
+         
+         
+     </p>
+
+     <p class="poem sniff">
+        
+        sniff.
+         
+         
+     </p>
+
+     <script>
+        document.querySelectorAll('.sniff').forEach(function(element) {
+            const transparentClick = function() {
+                element.style.color = 'rgba(0,230,64,1)'
+            }
+            element.onmouseover = transparentClick
+            element.ontouchstart = transparentClick
+        })
+    </script>
+    
     <p class="poem" id="smell">
         Can you smell it?
     </p>
-
+    
     <p id="favorite" class="special-text">
-       That is the smell of my favorite flower.
-
+        That is the smell of my favorite flower.
+        
     </p>
-
+    
     <p class="poem" id="description">
         leathery, musky, peachy, ambrosial
     </p>
-
+    
     <p class="poem" id="hands">
         
-      ON THE OTHER HAND...
+        ON THE OTHER HAND...
         
         
     </p>
     
     <img id="thepast" src="past.gif"></img>
-
+    
     <p class="poem" id="smell">
         Can you smell it?
     </p>
+    
+    <p class="poem sniff">
+        
+        sniff, 
+         
+         
+     </p>
+ 
+     <p class="poem sniff">
+         
+         sniff, 
           
           
       </p>
+ 
+      <p class="poem sniff">
+         
+         sniff.
+          
+          
+      </p>
+
+      <script>
+        document.querySelectorAll('.sniff').forEach(function(element) {
+            const transparentClick = function() {
+                element.style.color = 'rgba(0,230,64,1)'
+            }
+            element.onmouseover = transparentClick
+            element.ontouchstart = transparentClick
+        })
+    </script>
     
-    <img id="paris" src="paris.gif"></img>
+</p>
+<div id="opiumbox">
     
-    <p class="poem" id="aroma">
-        
-        Once the aroma of a flower starts spreading
-        
-        
-    </p>
-    
-    <img id="paris2" src="paris2.gif"></img>
+    <img id="floripondio" src="floripondio.JPG"></img>
+    <img id="snow" src="snow.gif"></img>
     
     
-    <p class="poem" id="stop">
-        
-        It will not stop
-        
-        
-    </p>
+</div>
+
+<p class="poem" id="smell">
+    Ripe but COLD.
+</p>
+
+<p class="poem" id="hands">
     
-    <img id="expanded" src="expanded.gif"></img>
+    You better not fall asleep under this tree
+      
+</p>
+
+
+<img id="paris" src="parisc.gif"></img>
+
+<p class="poem" id="aroma">
     
-    <div id="firebox">
-        <img id="fuego" src="fuego.JPG"></img>
-        <video id="pita" src="pita.mp4" controls="true"></video>
-        <img id="america" src="america.jpg"></img>
-        <video id="pailon" src="pailon.mp4" controls="true"></video>
-        <video id="sanrafael" src="sanrafael.mp4" controls="true"></video>
+    Once the aroma of a flower starts spreading
+    
+    
+</p>
+
+<script>
+    document.querySelectorAll('#aroma').forEach(function(element) {
+        const transparentClick = function() {
+            element.style.color = 'red'
+        }
+        element.onmouseover = transparentClick
+        element.ontouchstart = transparentClick
+    })
+</script>
+
+<img id="paris2" src="parisc2.gif"></img>
+
+
+<p class="poem" id="stop">
+    
+    It will not stop
+    
+    
+</p>
+
+
+<script>
+    document.querySelectorAll('#stop').forEach(function(element) {
+        const transparentClick = function() {
+            element.style.color = 'red'
+        }
+        element.onmouseover = transparentClick
+        element.ontouchstart = transparentClick
+    })
+</script>
+
+<img id="expanded" src="expanded.gif"></img>
+
+<div id="firebox">
+    <img id="fuego" src="fuego.JPG"></img>
+    <video id="pita" src="pita.mp4" controls="true"></video>
+    <img id="america" src="america.jpg"></img>
+    <video id="pailon" src="pailon.mp4" controls="true"></video>
+    <video id="sanrafael" src="sanrafael.mp4" controls="true"></video>
+</div>
+
+<div id="virginbox">
+    <img id="arrarray" src="arrarray.png"></img>
+    <img id="arrarray" src="arrarray.png"></img>
+    <img id="arrarray" src="arrarray.png"></img>
+    <img id="arrarray" src="arrarray.png"></img>
+    <div id="virgin-gif-box">
+        <img id="virgin-gif" src="VIRGEN.gif"></img>  
     </div>
+</div>
+
+
+<img id="horizon" src="horizon.gif"></img>
+
+<p class="poem" id="shores">
     
-    <div id="virginbox">
-        <img id="arrarray" src="arrarray.png"></img>
-        <img id="arrarray" src="arrarray.png"></img>
-        <img id="arrarray" src="arrarray.png"></img>
-        <img id="arrarray" src="arrarray.png"></img>
-        <div id="virgin-gif-box">
-            <img id="virgin-gif" src="VIRGEN.gif"></img>  
-        </div>
-    </div>
-
-
-   <img id="horizon" src="horizon.gif"></img>
-
-   <p class="poem" id="shores">
-        
     BETWEEN TWO SHORES
     
 </p>
-   <img id="horizon2" src="horizon.gif"></img>
+<img id="horizon2" src="horizon.gif"></img>
 
-   
 
-    <p class="poem" id="hole">
-        
-        a black hole.
-        
-    </p> 
+
+<p class="poem" id="hole">
     
-    <div class="twocolumn">
-        <img id="planet" src="planet.gif"></img>
-        
-        <p class="special-text" id="sunstroke">
-            A sunstroke.
-            A desert. A city. 
-            An unmbral of salt.
-            Follow the water path. 
-            It is an ocean. 
-            You don't need to swim.
-            The tallest mountains grow benath you.
-            As you reach the coast, the moon lights the sand. 
-            Bend down and smell the floor.
-            
-            
-        </p>
-    </div>
+    a black hole.
     
-    <p class="poem" id="time">
-        Time is golden. No. Silence is golden. No.
-        You smell like copper.
-        
-    </p>
+</p> 
 
-    <p class="poem" id="extrasolar">
-        
-        An extrasolar world.
-        
-        
-    </p>
+<script>
+    document.querySelectorAll('#hole').forEach(function(element) {
+        const transparentClick = function() {
+            element.style.color = 'rgba(0,0,0)'
+        }
+        element.onmouseover = transparentClick
+        element.ontouchstart = transparentClick
+    })
+</script>
+
+
+<p class="poem" id="time">
+    Time is golden. No. Silence is golden. No.
+    You smell like copper.
     
+</p>
 
-    <div id="dreambox" class="twocolumn">
+<p class="poem" id="extrasolar">
+    
+    Metallic like an extrasolar world.
+    
+    
+</p>
 
+
+<div id="dreambox" class="twocolumn">
+    
     <img id="latino" src="latino.JPG"></img>
     <img id="dreambig" src="dreambig.gif"></img>
-
+    
 </div>
-    
-   
 
+<p class="special-text" id="extrasolar">
+    DELICATE
     
+    
+</p>
+
+<p class="poem" id="time">
+   Like...
+    
+</p>
+
+<p class="poem" id="venus">
+    VENUS'S FLOWER BASKET
+    
+</p>
+
+<div class="twocolumn">
+    <img id="planet" src="planet.gif"></img>
+    
+    <p class="special-text" id="sunstroke">
+        A sunstroke.
+        A desert. A city. 
+        An umbral of salt.
+        Follow the water path. 
+        It is an ocean. 
+        You don't need to swim.
+        The tallest mountains grow benath you.
+        The tallest mountains grew behind you.
+
+        
+        
+    </p>
+</div>
+
+<p class="poem" id="venus">
+    where are her gardens of utopia?
+    
+</p>
+
+<img id="verde" src="verde.JPG"></img>
+
+<p class="poem" id="searching">
+    searching...
+     
+ </p>
+
+ <img id="cuerna" src="cuerna.JPG"></img>
+
+ <p class="poem" id="searching">
+    searching...
+     
+ </p>
+
+
+
+ <p class="poem" id="searching">
+    searching...
+     
+ </p>
+
+ <img id="angel" src="angel.JPG"></img>
+ <img id="sky" src="sky.gif"></img>
+
+ <p class="poem" id="venus">
+    Martina Miño Pérez
+    
+</p>
+
+<p class="poem" id="venus">
+    Music: William Luna
+    
+</p>
 </body>
 
 </html>
