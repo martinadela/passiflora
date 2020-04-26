@@ -9,10 +9,20 @@
     <link href="https://fonts.googleapis.com/css?family=Comic+Neue|Lexend+Mega|Pinyon+Script|Press+Start+2P&display=swap" rel="stylesheet">
     
     <style>
-
+        body, html {
+            width: 100%;
+        }
+        
+        main {
+            max-width: 900px;
+            width: 100%;
+            margin: auto;
+        }
+        
         body {
             cursor: url('flowerb.png'), auto;    
         }
+        
         * {
             margin: 0;
             padding: 0;
@@ -21,25 +31,121 @@
         
         h1 {
             font-family: 'Press Start 2P', cursive;
-            color: rgb(229, 245, 3);
             text-align: center;
             font-size: 130px;
             text-transform: uppercase;
             word-break: break-all;
             margin-top: 1em;
+        }
+        
+        img {
+            width: 100%;
+        }
+        
+        .button {
+            color:pink;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 30px;
+            background-color:rgba(0, 0, 0, 0.5);
+            border: none;
+            padding-left: 1em;
+            padding-right: 1em;
+            cursor: url('flowerb.png'), auto;
+            user-select: none; 
+            box-shadow:white 1px 1px 2px;
+            
+        }
+        
+        .pink-text {
+            color: rgb(241, 150, 211);
+        }
+        
+        .yellow-text {
+            color: rgb(229, 245, 3);
+        }
+        
+        .blue-text {
+            color: rgb(77, 6, 243);
+            font-size: 100px;
+            font-family: 'Pinyon Script', cursive;
+            text-align: center;
+        }
+        
+        .red-text {
+            color: rgb(241, 9, 9);
+            font-size: 100px;
+            font-family: 'Pinyon Script', cursive;
+            text-align: center;
+        }
+        
+        .white-text {
+            color: rgb(250, 244, 244);
+        }
+
+        .defaultext {
+            font-family:'Press Start 2P', cursive;
+        }
+        
+        .transition-color {
             transition-property: color;
             transition-duration: 2s;
         }
         
-        .smaller-font {
-            font-size: 50%;
+        .margin2 {
+            margin-top: 2em;
+            margin-bottom: 2em;
         }
+        
+        .poem { 
+            font-family: 'Press Start 2P', cursive;
+            font-size: 60px;
+            text-align:center;
+            margin-bottom: 1em;
+            margin-top: 1em; 
+        }
+        
+        .off, .popup {
+            display: none;
+        }
+         .popup {
+             background-color: rgba(0, 0, 0, 0.5);
+
+         }
+        .transparency {
+            filter: opacity(70%);
+        }
+        
+        .twocolumn {
+            display: flex;
+            
+        }
+        
+        .twocolumn > * {
+            display: block;
+            width: 50%;
+        }
+        
+        .centered-picture-box {
+            position: relative;
+        }
+        
+        .centered-picture-box-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
         
         #background {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
             height: 100%;
             z-index: -1;
         }
@@ -52,24 +158,7 @@
             justify-content: space-around;
         }
         
-        .special-text {
-            color: rgb(77, 6, 243);
-            font-size: 100px;
-            font-family:'Pinyon Script', cursive;
-            text-align: center;
-        }
-        
-        
-        .poem { 
-            color: rgb(229, 245, 3);
-            font-family: 'Press Start 2P', cursive;
-            font-size: 60px;
-            text-align:center;
-            margin-bottom: 1em;
-            margin-top: 1em;
-            
-        }
-        #pics1 {
+        .grid2columns {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(4, 1fr);
@@ -79,7 +168,6 @@
         }
         
         #pics1 img {
-            width: 100%;
             filter: saturate(20%);
             transition-property: filter;
             transition-duration: 1s;
@@ -93,120 +181,59 @@
         }
         
         #hands {
-            font-size: 20px;
-            margin-top: 2em;
-            margin-bottom: 2em;
+            font-size: 60px;
         }
         
         #wrist {
             font-size: 20px;
-            margin-top: 2em;
-            margin-bottom: 2em;
         }
+        
         
         #smell { 
             margin-bottom: 4em;
             margin-top: 2em;
             font-family:'Press Start 2P', cursive;
-            color: rgb(238, 90, 181);
             text-align: center;
             font-size: 20px;
         }
-
-        .sniff {
-            transition-property: color;
-            transition-duration: 2s;
-        }   
-        
         
         #favorite {
-            color: rgb(241, 9, 9);
             margin-bottom: 1em;
         }
         
-        #description {
-            color: mediumblue;
-            margin-top: 2em;
-            margin-bottom: 2em;
-        }
-        
         #thepast {
-            width: 100%;
-            margin-top: 2em;
-            margin-bottom: 2em;
             opacity: 60%;
         }
         
-        #opiumbox {
-            position: relative;
+        #imba {
+            transform: skew(-6deg, 0deg)
             
         }
         
-        #floripondio {
-            width: 100%;
-            filter: contrast(120%);
-        }
-
-        #snow {
-            position: absolute;
-            bottom: 0%;
-            right: 0%;
-            width: 50%;
-        }
-
-        #aroma {
-            transition-property: color;
-            transition-duration: 2s;
-        }
-            
-
-        #stop {
-            transition-property: color;
-            transition-duration: 2s;
-        }
+        
         #extrasolar {
-            color: rgb(243, 93, 218);
             font-size: 80px;
             text-align: center;
             margin-top: 1em;
             margin-bottom: 1em;
         }
         
-        
-        #black {
-            color: black;
-        }
-        
         #sunstroke {
+            width: 100%;
             text-align:center ;
             background: rgb(2,0,36);
             background: linear-gradient(60deg, rgba(231, 136, 189, 0.5) 0%, rgba(9,9,121,0.5) 35%, rgba(0,212,255,1) 100%);
             
         }
         
-        .twocolumn {
-            display: flex;
-            
-        }
-        
-        .twocolumn > * {
-            display: block;
+        #planet {
             width: 50%;
-        }
-        
-        
-        #paris {
-            width: 100%;
-            
-        }
-        
-        #paris2 {
-            width: 100%;
+            transform: skew(20deg, 0deg) translateX(50%);
+            margin-bottom: 2em;
         }
         
         #firebox {
             position: relative;
-            
         }
         
         #pita {
@@ -239,51 +266,30 @@
         }
         
         #fuego {
-            width: 100%;
             margin-top: 1em;
+            filter: saturate(80%);
         }
         
         #expanded {
-            width: 100%;
             margin-bottom: 2em;
-        }
-        
-        #arrarray {
-            margin-top: 2em;
-            margin-bottom: 2em;
-            width: 100%;
-        }
-        
-        #virginbox {
-            position: relative;
-        }
-        
-        #virgin-gif-box {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            font-size: 20px;
+            transition-property: font-size, color, letter-spacing;
+            transition-duration: 4s;
+            letter-spacing: 1em;
             display: flex;
-            flex-direction: row;
             justify-content: center;
-            align-items: center;
-            filter: opacity(75%);
         }
         
         #virgin-gif {
             height: 50%;
-        }
-        
-        #time {
-            color: rgb(243, 247, 6);
+            width: auto;
+            filter: opacity(75%);
         }
         
         #shores {
-            color: rgb(243, 241, 240);
-            font-size:20px;
-            text-align:left;
-            left: 2%;
+            font-size:15px;
+            text-align: left;
+            
         }
         
         #horizon {
@@ -299,13 +305,9 @@
         }
         
         #hole {
-            color: rgb(250, 244, 244);
-            margin-bottom: 2em;
-            margin-top: 4em;
-            text-align:right;
+            text-align: right;
             font-size: 100px;
-            transition-property: color;
-            transition-duration: 2s;
+            margin-top: 2em;
         }
         
         #dreambox {
@@ -318,52 +320,98 @@
             
         }
         
-        
-        #parisc {
-            width: 100%;
-        }
-
         #vaportina {
             position: fixed;
-            bottom: 2%;
-            right: 2%;
+            bottom: 4%;
+            right: 4%;
             z-index: 10;
         }
-
-        #vaportina #pause {
-            display: none;
+        
+        #snow {
+            width: 40%;
+        }    
+        
+        
+        #venus {
+            font-size: 20px;
+            text-align: right;
         }
         
-
-        #play {
-            color: mediumvioletred;
-            font-family: cursive ;
-            font-size: 20px;
-            background-color: skyblue;
-        }
-
-        #pause {
-            color: mediumvioletred;
-            font-family: cursive ;
-            font-size: 20px;
-            background-color: skyblue;
-        }
-
-        #vaportina .button {
-            cursor: url('flowerb.png'), auto;
-            user-select: none;    
-        }
-
-        #venus {
-            color: rgb(241, 150, 211);
-            font-size: 50px;
-            margin-top: 2em;
-            margin-bottom: 2em;
-        }
-
         #sky {
             filter: contrast(120%);
         }
+        
+        #question {
+            position: fixed;
+            top: 4%;
+            left: 4%;
+            z-index: 10;
+            width: 20%;
+        }
+        
+        #residence {
+            filter: saturate(120%);
+        }
+        
+        #verde {
+            width: 50%;
+            align-items: center;
+        }
+        
+        #fear {
+            font-size: 140px;
+        }
+        
+        #likethe {
+            font-size: 40px;
+        }
+        
+        #future {
+            font-size: 140px;
+            
+        }
+        
+        #eden {
+            font-size: 40px;
+        }
+        
+        #floripondio {
+            width: 50%;
+            transform: skew(-25deg, 0deg);
+            -webkit-transform: skew(-25deg, 0deg);
+            -o-transform: skew(-25deg, 0deg);
+            -ms-transform: skew(-25deg, 0deg);
+            transform: skew(-25deg, 0deg);
+        } 
+        
+        
+        #cuerna {
+            width: 70%; 
+            transform: skew(-18deg, 0deg);  
+            transform: rotate(20deg);
+        }
+
+    
+
+        .searching {
+            height: 1em;
+            text-align: left;
+            margin-bottom: 6em;
+            margin-top: 4em;
+        }
+
+       #angel {
+           width: 15%;
+           height: 25%;
+           position: fixed;
+           right: 4%;
+           top: 4%;
+           z-index: 10;
+
+       }
+
+       
+        
     </style>
 </head>
 <body>
@@ -371,17 +419,17 @@
     
     <div id="vaportina">
         <audio loop="true">
-            <source src="vienes-y-te-vas-edited.mp3" type="audio/mpeg">
-            <source src="vienes-y-te-vas-edited.ogg" type="audio/ogg">
+            <source src="vienes-y-te-vas-edited.mp3" type="audio/mpeg" />
+            <source src="vienes-y-te-vas-edited.ogg" type="audio/ogg" />
         </audio>
-        <div id="play" class="button">
-            PLAY ME
-        </div>
-        <div id="pause" class="button">
-            PAUSE ME
-        </div>
+        <button id="play" class="button on">
+            ▶
+        </button>
+        <button id="pause" class="button off">
+            🎹
+        </button>
     </div>
-
+    
     <script>
         const playContainer = document.querySelector('#vaportina')
         const audioElement = playContainer.querySelector('audio')
@@ -398,9 +446,63 @@
             pauseButton.style.display = 'none'
         }
     </script>
+    
+    
+    <div id="question">
+        <button class="button show-popup">
+            ?
+        </button>
+
+        <div class="popup">
+            <button class="button hide-popup">
+                hello
+            </button>
+            <a target="_blank" href="https://martinamino.com/" >
+                <img id="residence" src="residence.jpg"></img>
+            </a>
+
+            <p class="pink-text defaultext">
+                Installation by Martina Miño Pérez
+            As part of Pori Biennale IV. 2020. 
+            </p>
+        </div>
+    </div>
+
+    <div id="angel">
+        <button class="button show-popup">
+            14:14
+        </button>
+
+        <div class="popup">
+            <button class="button hide-popup">
+                HIDE
+            </button>
+            <a target="_blank" href="https://docs.google.com/document/d/1AATFkPrj_j92Fkxk9FJjFdMcd9fojHi8oWiQeDF6gxY/edit">
+                <img src="angel.JPG"></img>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const showButtons = document.querySelectorAll('.show-popup')
+        
+        showButtons.forEach(function(showButton) {
+            const container = showButton.parentElement
+            const hideButton = container.querySelector('.hide-popup')
+            const popup = container.querySelector('.popup')
+            showButton.onclick = function() {
+                popup.style.display = "block"
+                showButton.style.display = 'none'
+            }
+            hideButton.onclick = function() {
+                popup.style.display = "none"
+                showButton.style.display = 'block'
+            }
+        })
+    </script>
 
     <div id="cover"> 
-        <h1>
+        <h1 class="yellow-text transition-color">
             <div>
                 PASSI
             </div>
@@ -411,10 +513,10 @@
             
             
         </h1>
-        <p class="special-text">The Garden of Transcontinental Desires</p>
+        <p class="blue-text">The Garden of Transcontinental Desires</p>
         
     </div>
-
+    
     <script>
         document.querySelectorAll('#cover h1').forEach(function(element) {
             const transparentClick = function() {
@@ -424,345 +526,468 @@
             element.ontouchstart = transparentClick
         })
     </script>
-
-    <div id="pics1">
-        <img id="mapa1" src="mapa aereo1.gif"></img>
-        <div>
+    
+    <main>
+        
+        <div id="pics1" class="grid2columns">
+            <img id="mapa1" src="mapa aereo1.gif"></img>
+            <div>
+                
+            </div>
+            <div>
+                
+            </div>
+            
+            <img id="bloom2" src="bloom2.gif"></img>
+            <img id="bloom3" src="bloom3.gif"></img>
+            <div>
+                
+            </div>
+            <div>
+                
+            </div>
+            <img id="mapa2" src="mapa3.gif"></img>
+        </div>
+        
+        <script>
+            document.querySelectorAll('#pics1 img').forEach(function(element) {
+                const transparentClick = function() {
+                    element.style.filter = 'saturate(100%)'
+                }
+                element.onmouseover = transparentClick
+                element.ontouchstart = transparentClick
+            })
+        </script>
+        
+        <p id="garden" class="blue-text">
+            Welcome to my garden. 
+        </p>
+        
+        <p class="poem yellow-text margin2" id="hands">
+            
+            -LOOK AT YOUR HANDS-
+            
+            
+        </p>
+        
+        <p class="poem yellow-text margin2" id="wrist">
+            
+            Now smell your right wrist
+            
+            
+        </p>
+        
+        <p class="poem yellow-text sniff transition-color">
+            
+            sniff, 
+            
+            
+        </p>
+        
+        <p class="poem yellow-text sniff transition-color">
+            
+            sniff, 
+            
+            
+        </p>
+        
+        <p class="poem yellow-text sniff transition-color">
+            
+            sniff.
+            
+            
+        </p>
+        
+        <p class="poem pink-text" id="smell">
+            What do you smell?
+        </p>
+        
+        <p id="favorite" class="red-text">
+            It is the aroma of my favorite flower.
+            
+        </p>
+        
+        <p class="poem blue-text margin2">
+            leathery, musky, peachy, ambrosial
+        </p>
+        
+        <p class="poem yellow-text margin2" id="hands">
+            
+            ON THE OTHER HAND...
+            
+            
+        </p>
+        
+        <img class="margin2" id="thepast" src="rotten.gif"></img>
+        
+        <p class="poem pink-text" id="smell">
+            Can you smell it?
+        </p>
+        
+        <p class="poem sniff yellow-text transition-color">
+            
+            sniff, 
+            
+            
+        </p>
+        
+        <p class="poem sniff yellow-text transition-color">
+            
+            sniff, 
+            
+            
+        </p>
+        
+        <p class="poem sniff yellow-text transition-color">
+            
+            sniff.
+            
+            
+        </p>
+        
+        <script>
+            document.querySelectorAll('.sniff').forEach(function(element) {
+                const transparentClick = function() {
+                    element.style.color = 'rgba(0,230,64,1)'
+                }
+                element.onmouseover = transparentClick
+                element.ontouchstart = transparentClick
+            })
+        </script>
+        
+        <img id="imba" src="imba.gif"></img>
+        
+        <p class="poem yellow-text margin2" id="hands">
+            
+            Once the aroma of a flower
+            
+        </p>
+        
+        
+        <img src="parisc.gif" class = transparency></img>
+        
+        <p class="poem yellow-text transition-color" id="aroma">
+            
+            starts spreading
+            
+            
+        </p>
+        
+        <script>
+            document.querySelectorAll('#aroma').forEach(function(element) {
+                const transparentClick = function() {
+                    element.style.color = 'red'
+                }
+                element.onmouseover = transparentClick
+                element.ontouchstart = transparentClick
+            })
+        </script>
+        
+        <img src="parisc2.gif" class = transparency></img>
+        
+        
+        <p class="poem yellow-text transition-color" id="stop">
+            
+            It will not stop
+            
+            
+        </p>
+        
+        
+        <script>
+            document.querySelectorAll('#stop').forEach(function(element) {
+                const transparentClick = function() {
+                    element.style.color = 'red'
+                }
+                element.onmouseover = transparentClick
+                element.ontouchstart = transparentClick
+            })
+        </script>
+        
+        <img id="expanded" src="expanded.gif"></img>
+        
+        <div id="firebox">
+            <img id="fuego" src="fuego.JPG"></img>
+            <video id="pita" src="pita.mp4" controls="true" onloadstart="this.volume=0.1"></video>
+            <img id="america" src="america.jpg"></img>
+            <video id="pailon" src="pailon.mp4" controls="true" onloadstart="this.volume=0.1"></video>
+            <video id="sanrafael" src="sanrafael.mp4" controls="true" onloadstart="this.volume=0.1"></video>
             
         </div>
-        <div>
-            
+        
+        <div class="centered-picture-box">
+            <img class="margin2" id="arrarray" src="arrarray.png"></img>
+            <img class="margin2" id="arrarray" src="arrarray.png"></img>
+            <img class="margin2" id="arrarray" src="arrarray.png"></img>
+            <img class="margin2" id="arrarray" src="arrarray.png"></img>
+            <div class="centered-picture-box-inner">
+                <img id="virgin-gif" src="VIRGEN.gif"></img>  
+            </div>
         </div>
         
-        <img id="bloom2" src="bloom2.gif"></img>
-        <img id="bloom3" src="bloom3.gif"></img>
-        <div>
+        
+        <img id="horizon" src="horizon.gif"></img>
+        
+        <p class="poem white-text" id="shores">
+            
+            BETWEEN TWO SHORES
+            
+        </p>
+        <img id="horizon2" class = "transparency" src="horizon.gif"></img>
+        
+        
+        
+        <p class="poem white-text transition-color margin2" id="hole">
+            
+            a black hole?
+            
+        </p> 
+        
+        <script>
+            document.querySelectorAll('#hole').forEach(function(element) {
+                const transparentClick = function() {
+                    element.style.color = 'rgba(0,0,0)'
+                }
+                element.onmouseover = transparentClick
+                element.ontouchstart = transparentClick
+            })
+        </script>
+        
+        
+        <p class="poem pink-text" id="extrasolar">
+            
+            Metallic like an
+            
+            
+        </p>
+        
+        <img id="blue" src="blue.gif"></img>
+        
+        
+        <div id="dreambox" class="twocolumn">
+            
+            <img id="latino" src="latino.JPG"></img>
+            <img id="dreambig" src="dreambig.gif"></img>
             
         </div>
-        <div>
+
+        <p id=remember class="poem yellow-text">
+            Remember:
+             
+         </p>
+        <p id=gold class="poem yellow-text">
+            Time is golden. 
             
+        </p>
+        
+        
+        <script>
+            document.querySelectorAll('#gold').forEach(function(element) {
+                const transparentClick = function() {
+                    element.style.color = 'rgb(218,165,32)'
+                }
+                element.onmouseover = transparentClick
+                element.ontouchstart = transparentClick
+            })
+        </script>
+        
+        <p class="poem yellow-text">
+            No. Silence is golden. 
+        </p>
+        
+        <p class="poem yellow-text">
+            No. You smell like copper. 
+        </p>
+        
+        
+        
+        <p id="fear" class="red-text margin2">
+            (FEAR)
+            
+        </p>
+        
+        <p id="expanded" class="poem blue-text">
+            EXPANDED
+            
+        </p>
+        
+        <script>
+            document.querySelectorAll('#expanded').forEach(function(element) {
+                const transparentClick = function() {
+                    element.style.color = 'rgb(240,255,255)'
+                    element.style['font-size'] = "80px"
+                }
+                element.onmouseover = transparentClick
+                element.ontouchstart = transparentClick
+            })
+        </script>
+        
+        
+        <img id="planet" class="transparency" src="planet.gif"></img>
+        
+        
+        <div >
+            <p id=likethe class="poem blue-text ">
+                like the
+                
+            </p>
+            
+            <p id=future class="poem blue-text transition-color">
+                f u t u r e
+                
+            </p>
+            
+            <script>
+                document.querySelectorAll('#future').forEach(function(element) {
+                    const transparentClick = function() {
+                        element.style.color = 'rgba(240,255,255,0)'
+                    }
+                    element.onmouseover = transparentClick
+                    element.ontouchstart = transparentClick
+                })
+            </script>
+            
+            <div>
+                <p id="sunstroke" class="blue-text" >
+                    A strange feeling.
+                    Scented with myrrh.
+                    A mirage:
+                    An umbral of salt.
+                    Follow the water path. 
+                    It is an ocean. 
+                    You don't need to swim.
+                    The tallest mountains grow benath you.
+                    The tallest mountains grew behind you.
+                    
+                    
+                    
+                </p>
+            </div>
         </div>
-        <img id="mapa1" src="mapa3.gif"></img>
-    </div>
-    
-    <script>
-        document.querySelectorAll('#pics1 img').forEach(function(element) {
-            const transparentClick = function() {
-                element.style.filter = 'saturate(100%)'
-            }
-            element.onmouseover = transparentClick
-            element.ontouchstart = transparentClick
-        })
-    </script>
-    
-    <p id="garden" class="special-text">
-        Welcome to my garden. 
-    </p>
-    
-    <p class="poem" id="hands">
         
-        -LOOK AT YOUR HANDS-
+        <div id="skybox" class="centered-picture-box" >
+            <img id="sky" class="transparency"  src="sky.gif"></img>
+            <div class="centered-picture-box-inner">
+                <img id="snow" class="transparency" src="snow.gif"></img>
+            </div>
+        </div>
         
+        <p class="poem red-text" id="smell">
+            RIPE AND COLD.
+            
+            
+        </p>
         
-    </p>
-    
-    <p class="poem" id="wrist">
+        <p class="poem pink-text" id="eden">
+            This is not the Garden of Eden.
+        </p>
         
-        Now smell your right wrist
+        <img id="floripondio" src="floripondio.JPG" class="transparency"></img>
+        <p class="poem red-text" id="venus">
+            OR VENUS'S FLOWER BASKET
+        </p>
+        <img id="cuerna" src="cuerna.JPG"></img>
         
         
-    </p>
-    
-    <p class="poem sniff">
+        <p class="poem pink-text margin2">
+            So what curiosity brings you to this garden?
+        </p>
+
+        <p class="blue-text margin2" id="past">
+            The past?
+        </p>
+
+        <img id="moon" src="moon.jpg" class="transparency"></img>
+
+        <script>
+            document.querySelectorAll('#past').forEach(function(element) {
+                const transparentClick = function() {
+                    element.style.color = 'rgba(0,0,0)'
+                }
+                element.onmouseover = transparentClick
+                element.ontouchstart = transparentClick
+            })
+        </script>
+       
+        <p class="poem sniff yellow-text transition-color">
+            
+            sniff, 
+            
+            
+        </p>
         
-       sniff, 
+        <p class="poem sniff yellow-text transition-color">
+            
+            sniff, 
+            
+            
+        </p>
         
+        <p class="poem sniff yellow-text transition-color">
+            
+            sniff.
+            
+            
+        </p>
         
-    </p>
-
-    <p class="poem sniff">
+        <script>
+            document.querySelectorAll('.sniff').forEach(function(element) {
+                const transparentClick = function() {
+                    element.style.color = 'rgba(0,230,64,1)'
+                }
+                element.onmouseover = transparentClick
+                element.ontouchstart = transparentClick
+            })
+        </script>
         
-        sniff, 
-         
-         
-     </p>
 
-     <p class="poem sniff">
-        
-        sniff.
-         
-         
-     </p>
+        <p class="poem pink-text margin2">
+            Will you take care of the flowers for me?
+        </p>
 
-     <script>
-        document.querySelectorAll('.sniff').forEach(function(element) {
-            const transparentClick = function() {
-                element.style.color = 'rgba(0,230,64,1)'
-            }
-            element.onmouseover = transparentClick
-            element.ontouchstart = transparentClick
-        })
-    </script>
-    
-    <p class="poem" id="smell">
-        Can you smell it?
-    </p>
-    
-    <p id="favorite" class="special-text">
-        That is the smell of my favorite flower.
-        
-    </p>
-    
-    <p class="poem" id="description">
-        leathery, musky, peachy, ambrosial
-    </p>
-    
-    <p class="poem" id="hands">
-        
-        ON THE OTHER HAND...
-        
-        
-    </p>
-    
-    <img id="thepast" src="past.gif"></img>
-    
-    <p class="poem" id="smell">
-        Can you smell it?
-    </p>
-    
-    <p class="poem sniff">
-        
-        sniff, 
-         
-         
-     </p>
- 
-     <p class="poem sniff">
-         
-         sniff, 
-          
-          
-      </p>
- 
-      <p class="poem sniff">
-         
-         sniff.
-          
-          
-      </p>
+        <p class="poem red-text margin2">
+            Remember you are one of them...
+        </p>
 
-      <script>
-        document.querySelectorAll('.sniff').forEach(function(element) {
-            const transparentClick = function() {
-                element.style.color = 'rgba(0,230,64,1)'
-            }
-            element.onmouseover = transparentClick
-            element.ontouchstart = transparentClick
-        })
-    </script>
-    
-</p>
-<div id="opiumbox">
-    
-    <img id="floripondio" src="floripondio.JPG"></img>
-    <img id="snow" src="snow.gif"></img>
-    
-    
-</div>
-
-<p class="poem" id="smell">
-    Ripe but COLD.
-</p>
-
-<p class="poem" id="hands">
-    
-    You better not fall asleep under this tree
-      
-</p>
-
-
-<img id="paris" src="parisc.gif"></img>
-
-<p class="poem" id="aroma">
-    
-    Once the aroma of a flower starts spreading
-    
-    
-</p>
-
-<script>
-    document.querySelectorAll('#aroma').forEach(function(element) {
-        const transparentClick = function() {
-            element.style.color = 'red'
-        }
-        element.onmouseover = transparentClick
-        element.ontouchstart = transparentClick
-    })
-</script>
-
-<img id="paris2" src="parisc2.gif"></img>
-
-
-<p class="poem" id="stop">
-    
-    It will not stop
-    
-    
-</p>
-
-
-<script>
-    document.querySelectorAll('#stop').forEach(function(element) {
-        const transparentClick = function() {
-            element.style.color = 'red'
-        }
-        element.onmouseover = transparentClick
-        element.ontouchstart = transparentClick
-    })
-</script>
-
-<img id="expanded" src="expanded.gif"></img>
-
-<div id="firebox">
-    <img id="fuego" src="fuego.JPG"></img>
-    <video id="pita" src="pita.mp4" controls="true"></video>
-    <img id="america" src="america.jpg"></img>
-    <video id="pailon" src="pailon.mp4" controls="true"></video>
-    <video id="sanrafael" src="sanrafael.mp4" controls="true"></video>
-</div>
-
-<div id="virginbox">
-    <img id="arrarray" src="arrarray.png"></img>
-    <img id="arrarray" src="arrarray.png"></img>
-    <img id="arrarray" src="arrarray.png"></img>
-    <img id="arrarray" src="arrarray.png"></img>
-    <div id="virgin-gif-box">
-        <img id="virgin-gif" src="VIRGEN.gif"></img>  
-    </div>
-</div>
-
-
-<img id="horizon" src="horizon.gif"></img>
-
-<p class="poem" id="shores">
-    
-    BETWEEN TWO SHORES
-    
-</p>
-<img id="horizon2" src="horizon.gif"></img>
-
-
-
-<p class="poem" id="hole">
-    
-    a black hole.
-    
-</p> 
-
-<script>
-    document.querySelectorAll('#hole').forEach(function(element) {
-        const transparentClick = function() {
-            element.style.color = 'rgba(0,0,0)'
-        }
-        element.onmouseover = transparentClick
-        element.ontouchstart = transparentClick
-    })
-</script>
-
-
-<p class="poem" id="time">
-    Time is golden. No. Silence is golden. No.
-    You smell like copper.
-    
-</p>
-
-<p class="poem" id="extrasolar">
-    
-    Metallic like an extrasolar world.
-    
-    
-</p>
-
-
-<div id="dreambox" class="twocolumn">
-    
-    <img id="latino" src="latino.JPG"></img>
-    <img id="dreambig" src="dreambig.gif"></img>
-    
-</div>
-
-<p class="special-text" id="extrasolar">
-    DELICATE
-    
-    
-</p>
-
-<p class="poem" id="time">
-   Like...
-    
-</p>
-
-<p class="poem" id="venus">
-    VENUS'S FLOWER BASKET
-    
-</p>
-
-<div class="twocolumn">
-    <img id="planet" src="planet.gif"></img>
-    
-    <p class="special-text" id="sunstroke">
-        A sunstroke.
-        A desert. A city. 
-        An umbral of salt.
-        Follow the water path. 
-        It is an ocean. 
-        You don't need to swim.
-        The tallest mountains grow benath you.
-        The tallest mountains grew behind you.
-
+        <p class=" blue-text margin2">
+            You won't find me here anymore.
+        </p>
         
         
-    </p>
-</div>
-
-<p class="poem" id="venus">
-    where are her gardens of utopia?
+        <p class="poem yellow-text searching"></p>
+        <p class="poem yellow-text searching"></p>
+        <p class="poem yellow-text searching"></p>
+        <p class="poem yellow-text searching"></p>
+        <p class="poem yellow-text searching"></p>
+        <p class="poem yellow-text searching"></p>
+        <p class="poem yellow-text searching"></p>
+        <p class="poem yellow-text searching"></p>
+        <p class="poem yellow-text searching"></p>
+        <p class="poem yellow-text searching"></p>
+        
+        <script>
+            const intervalTime = 150
+            const text = 'searching...'
+            const elements = document.querySelectorAll('.searching')
+            let counter = 0
+            setInterval(() => {
+                elements.forEach((element, row) => {
+                    // const charIndex = ((elements.length - row) + counter) % text.length
+                    const charIndex = counter % text.length
+                    element.innerHTML = text.slice(0, charIndex + 1) + '_'
+                })
+                counter++
+            }, intervalTime)
+        </script>
+        
+        
+        <p class="blue-text" id="thanks">
+            Thank you for your visit. BISOUS.
+            
+        </p>
+        
+    </main>
     
-</p>
-
-<img id="verde" src="verde.JPG"></img>
-
-<p class="poem" id="searching">
-    searching...
-     
- </p>
-
- <img id="cuerna" src="cuerna.JPG"></img>
-
- <p class="poem" id="searching">
-    searching...
-     
- </p>
-
-
-
- <p class="poem" id="searching">
-    searching...
-     
- </p>
-
- <img id="angel" src="angel.JPG"></img>
- <img id="sky" src="sky.gif"></img>
-
- <p class="poem" id="venus">
-    Martina Miño Pérez
-    
-</p>
-
-<p class="poem" id="venus">
-    Music: William Luna
-    
-</p>
 </body>
 
 </html>
