@@ -11,8 +11,34 @@
     <style>
         body, html {
             width: 100%;
+            font-size: 100px;
+            overflow-x: hidden;
         }
         
+        @media screen and (max-width: 1000px) {
+            body, html {
+                font-size: 85px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            body, html {
+                font-size: 70px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            body, html {
+                font-size: 55px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            body, html {
+                font-size: 40px;
+            }
+        }
+
         main {
             max-width: 900px;
             width: 100%;
@@ -20,7 +46,7 @@
         }
         
         body {
-            cursor: url('flowerb.png'), auto;    
+            cursor: url('flowerb.png') 16 16, auto;    
         }
         
         * {
@@ -32,7 +58,7 @@
         h1 {
             font-family: 'Press Start 2P', cursive;
             text-align: center;
-            font-size: 130px;
+            font-size: 130%;
             text-transform: uppercase;
             word-break: break-all;
             margin-top: 1em;
@@ -45,15 +71,13 @@
         .button {
             color:pink;
             font-family: 'Press Start 2P', cursive;
-            font-size: 30px;
+            font-size: 30%;
             background-color:rgba(0, 0, 0, 0.5);
             border: none;
-            padding-left: 1em;
-            padding-right: 1em;
-            cursor: url('flowerb.png'), auto;
+            cursor: url('flowerb.png') 16 16, auto;
             user-select: none; 
             box-shadow:white 1px 1px 2px;
-            
+            display: block;
         }
         
         .pink-text {
@@ -66,24 +90,20 @@
         
         .blue-text {
             color: rgb(77, 6, 243);
-            font-size: 100px;
+            font-size: 100%;
             font-family: 'Pinyon Script', cursive;
             text-align: center;
         }
         
         .red-text {
             color: rgb(241, 9, 9);
-            font-size: 100px;
+            font-size: 100%;
             font-family: 'Pinyon Script', cursive;
             text-align: center;
         }
         
         .white-text {
             color: rgb(250, 244, 244);
-        }
-
-        .defaultext {
-            font-family:'Press Start 2P', cursive;
         }
         
         .transition-color {
@@ -92,13 +112,13 @@
         }
         
         .margin2 {
-            margin-top: 2em;
-            margin-bottom: 2em;
+            margin-top: 0.3em;
+            margin-bottom: 0.3em;
         }
         
         .poem { 
             font-family: 'Press Start 2P', cursive;
-            font-size: 60px;
+            font-size: 60%;
             text-align:center;
             margin-bottom: 1em;
             margin-top: 1em; 
@@ -174,18 +194,18 @@
         }
         
         #garden {
-            font-size: 100px;
+            font-size: 100%;
             margin-bottom: 1em;
             margin-top: 1em;
             text-align: center;
         }
         
         #hands {
-            font-size: 60px;
+            font-size: 60%;
         }
         
         #wrist {
-            font-size: 20px;
+            font-size: 20%;
         }
         
         
@@ -194,11 +214,11 @@
             margin-top: 2em;
             font-family:'Press Start 2P', cursive;
             text-align: center;
-            font-size: 20px;
+            font-size: 20%;
         }
         
         #favorite {
-            margin-bottom: 1em;
+            margin-bottom: 0.1em;
         }
         
         #thepast {
@@ -212,7 +232,7 @@
         
         
         #extrasolar {
-            font-size: 80px;
+            font-size: 80%;
             text-align: center;
             margin-top: 1em;
             margin-bottom: 1em;
@@ -229,7 +249,7 @@
         #planet {
             width: 50%;
             transform: skew(20deg, 0deg) translateX(50%);
-            margin-bottom: 2em;
+            margin-bottom: 0.2em;
         }
         
         #firebox {
@@ -266,13 +286,13 @@
         }
         
         #fuego {
-            margin-top: 1em;
+            margin-top: 0.1em;
             filter: saturate(80%);
         }
         
         #expanded {
             margin-bottom: 2em;
-            font-size: 20px;
+            font-size: 20%;
             transition-property: font-size, color, letter-spacing;
             transition-duration: 4s;
             letter-spacing: 1em;
@@ -287,7 +307,7 @@
         }
         
         #shores {
-            font-size:15px;
+            font-size: 15%;
             text-align: left;
             
         }
@@ -306,7 +326,7 @@
         
         #hole {
             text-align: right;
-            font-size: 100px;
+            font-size: 100%;
             margin-top: 2em;
         }
         
@@ -333,7 +353,7 @@
         
         
         #venus {
-            font-size: 20px;
+            font-size: 20%;
             text-align: right;
         }
         
@@ -349,6 +369,11 @@
             width: 20%;
         }
         
+        #credits {
+            font-size: 10%;
+            font-family: 'Press Start 2P', cursive;
+        }
+
         #residence {
             filter: saturate(120%);
         }
@@ -359,20 +384,20 @@
         }
         
         #fear {
-            font-size: 140px;
+            font-size: 140%;
         }
         
         #likethe {
-            font-size: 40px;
+            font-size: 40%;
         }
         
         #future {
-            font-size: 140px;
+            font-size: 140%;
             
         }
         
         #eden {
-            font-size: 40px;
+            font-size: 40%;
         }
         
         #floripondio {
@@ -396,21 +421,22 @@
         .searching {
             height: 1em;
             text-align: left;
-            margin-bottom: 6em;
-            margin-top: 4em;
+            margin-bottom: 2em;
+            margin-top: 2em;
         }
 
        #angel {
            width: 15%;
-           height: 25%;
            position: fixed;
            right: 4%;
            top: 4%;
            z-index: 10;
-
        }
 
-       
+       #angel .button {
+           position: absolute;
+           right: 0;
+       }
         
     </style>
 </head>
@@ -461,7 +487,7 @@
                 <img id="residence" src="residence.jpg"></img>
             </a>
 
-            <p class="pink-text defaultext">
+            <p id="credits" class="pink-text">
                 Installation by Martina Miño Pérez
             As part of Pori Biennale IV. 2020. 
             </p>
@@ -472,7 +498,6 @@
         <button class="button show-popup">
             14:14
         </button>
-
         <div class="popup">
             <button class="button hide-popup">
                 HIDE
@@ -815,7 +840,7 @@
             document.querySelectorAll('#expanded').forEach(function(element) {
                 const transparentClick = function() {
                     element.style.color = 'rgb(240,255,255)'
-                    element.style['font-size'] = "80px"
+                    element.style['font-size'] = "80%"
                 }
                 element.onmouseover = transparentClick
                 element.ontouchstart = transparentClick
@@ -953,24 +978,45 @@
             You won't find me here anymore.
         </p>
         
-        
-        <p class="poem yellow-text searching"></p>
-        <p class="poem yellow-text searching"></p>
-        <p class="poem yellow-text searching"></p>
-        <p class="poem yellow-text searching"></p>
-        <p class="poem yellow-text searching"></p>
-        <p class="poem yellow-text searching"></p>
-        <p class="poem yellow-text searching"></p>
-        <p class="poem yellow-text searching"></p>
-        <p class="poem yellow-text searching"></p>
-        <p class="poem yellow-text searching"></p>
-        
+        <div id="searching-container">
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+            <p class="poem yellow-text searching"></p>
+        </div>
+
         <script>
             const intervalTime = 150
             const text = 'searching...'
-            const elements = document.querySelectorAll('.searching')
             let counter = 0
             setInterval(() => {
+                const elements = document.querySelectorAll('.searching')
                 elements.forEach((element, row) => {
                     // const charIndex = ((elements.length - row) + counter) % text.length
                     const charIndex = counter % text.length
@@ -980,13 +1026,38 @@
             }, intervalTime)
         </script>
         
-        
-        <p class="blue-text" id="thanks">
-            Thank you for your visit. BISOUS.
-            
-        </p>
-        
     </main>
+
+    <script>
+        const searchingContainer = document.querySelector('#searching-container')
+        const searchingElements = document.querySelectorAll('.searching')
+
+        function addSearching (entries) {
+            let el
+            for (let i = 0; i < 15; i++) {
+                el = document.createElement('p')
+                el.className = "poem yellow-text searching"
+                searchingContainer.appendChild(el)
+            }
+            observer.disconnect()
+            observer.observe(el);
+        }
+
+        let options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 1.0
+        }
+        let observer = new IntersectionObserver(function(entries) {
+            if (!entries[0].isIntersecting) {
+                return
+            }
+            addSearching()
+        }, options);
+
+        observer.observe(searchingElements[searchingElements.length - 1]);
+
+    </script>
     
 </body>
 
